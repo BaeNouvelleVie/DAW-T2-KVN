@@ -1,1 +1,21 @@
-<p>pregunta4 works!</p>
+<!-- pregunta4.component.html -->
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Calculadora de Descuentos de Almacén</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Precio Unitario</mat-label>
+          <input matInput type="number" [(ngModel)]="precioUnitario" name="precioUnitario" min="0">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Cantidad</mat-label>
+          <input matInput type="number" [(ngModel)]="cantidad" name="cantidad" min="0">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="calcularTotal()">Calcular</button>
+      </form>
+      <p *ngIf="totalConDescuento >= 0">Total a Pagar: $ {{ totalConDescuento.toFixed(2) }}</p>
+    </mat-card-content>
+  </mat-card>
+  
