@@ -15,15 +15,15 @@ import { CommonModule } from '@angular/common';
 export class Pregunta2Component {
   precioUnitario: number = 0;
   cantidad: number = 0;
-  total: number = 0;
+  total: number = -1;
 
   calcularTotal(): void {
     if (this.cantidad > 20) {
-      this.total = this.precioUnitario * this.cantidad * 0.9; // 10% de descuento
+      this.total = this.precioUnitario * this.cantidad * 0.9;
     } else if (this.cantidad > 10) {
-      this.total = this.precioUnitario * this.cantidad * 0.95; // 5% de descuento
+      this.total = this.precioUnitario * this.cantidad * 0.95; 
     } else {
-      this.total = this.precioUnitario * this.cantidad; // sin descuento
+      this.total = this.precioUnitario * this.cantidad; 
     }
   }
 }

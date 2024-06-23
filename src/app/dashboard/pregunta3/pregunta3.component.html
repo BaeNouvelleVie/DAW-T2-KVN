@@ -1,1 +1,17 @@
-<p>pregunta3 works!</p>
+<!-- pregunta3.component.html -->
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Calculadora de Costo de Llantas</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Cantidad de Llantas</mat-label>
+          <input matInput type="number" [(ngModel)]="cantidadLlantas" min="1" name="cantidadLlantas">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="calcularCosto()">Calcular Costo</button>
+      </form>
+      <p *ngIf="totalCosto >= 0">Total a Pagar: S/. {{ totalCosto }}</p>
+    </mat-card-content>
+  </mat-card>
+  
