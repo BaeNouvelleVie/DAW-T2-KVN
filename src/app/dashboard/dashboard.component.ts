@@ -22,6 +22,19 @@ export class DashboardComponent {
     this.router.navigate(["home"], {relativeTo: this.route})
   }
 
+  irPregunta2():void{
+    this.router.navigate(["pregunta2"], {relativeTo: this.route})
+  }
+
+  irPregunta3():void{
+    this.router.navigate(["pregunta3"], {relativeTo: this.route})
+  }
+
+  irPregunta4():void{
+    this.router.navigate(["pregunta4"], {relativeTo: this.route})
+  }
+
+
   salir():void{
     this.authService.logout();
     this.router.navigateByUrl("/login")
