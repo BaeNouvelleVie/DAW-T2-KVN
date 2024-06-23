@@ -6,13 +6,13 @@ import { Pregunta2Component } from './dashboard/pregunta2/pregunta2.component';
 import { Pregunta3Component } from './dashboard/pregunta3/pregunta3.component';
 import { Pregunta4Component } from './dashboard/pregunta4/pregunta4.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
 
     {path: "login", component: LoginComponent},
     {path: "dashboard", component: DashboardComponent,
-
-        //FALTA UN GUARD
+        canActivate: [authGuard],
         children: [
             {path: "home", component: HomeComponent},
             {path: "pregunta2", component: Pregunta2Component},
